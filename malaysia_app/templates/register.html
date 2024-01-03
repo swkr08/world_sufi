@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+{% load static%}
+{% block content %}
+
+ 
+<section>
+    <div class="w-100 pt-80 black-layer pb-70 opc65 position-relative">
+        <div class="fixed-bg" style="background-image: url(assets/images/page-title-bg.jpg);"></div>
+        <div class="container">
+            <div class="page-title-wrap text-center w-100">
+                <div class="page-title-inner d-inline-block">
+                    <h1 class="mb-0">Register</h1>
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="index.html" title="Home">Maktab - Home</a></li>
+                        <li class="breadcrumb-item active">Register</li>
+                    </ol>
+                </div>
+            </div><!-- Page Title Wrap -->
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="w-100 pb-250 position-relative">
+        <!-- <img class="sec-botm-rgt-mckp img-fluid position-absolute" src="assets/images/sec-botm-mckp.png" alt="Sec Bottom Mockup"> -->
+        <!-- <div id="contact-map" class="contact-map w-100"></div> -->
+        <div class="container">
+            <div class="contact-wrap mt-100 w-100">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-lg-6">
+                        <div class="cont-info-desc w-100">
+                            <h3 class="mb-0">Zikr Reminder</h3>
+                            <p class="mb-0">  Remind yourself with zikr to bring your soul to life, fuel up your soul by including Zikr in your daily life and work </p>
+                            <h6 class="mb-0">Follow us on social media</h6>
+                            <div class="social-links2 v2 text-center d-inline-flex">
+                                <a class="facebook" href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="twitter" href="https://twitter.com/" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="google" href="https://www.google.com/" title="Google Plus" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+                                <a class="linkedin" href="https://www.linkedin.com/" title="Linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-lg-6">
+                       
+                        
+                        <form class="cont-form w-100" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            <hr><br>
+                            <input name="username" type="text" placeholder="  Unique User Name (important)" required>
+                            <input name="email" type="email" placeholder="Email Address" required>
+                            <input name="password" type="password" placeholder="password" required>
+                            <!-- <textarea placeholder="Message"></textarea> -->
+                            <button class="thm-btn thm-bg" type="submit">Register</button><span></span><span></span><span></span><span></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- Contact Wrap -->
+        </div>
+    </div>
+</section>
+{% endblock content %}

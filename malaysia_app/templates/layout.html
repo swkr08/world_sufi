@@ -1,0 +1,674 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="icon" href="{% static 'assets/images/favicon.png' %}"sizes="35x35" type="image/png">
+        <title>Maktab - The Islamic Center</title>
+
+        <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/jquery.fancybox.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/jquery.bootstrap-touchspin.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/perfect-scrollbar.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/color.css' %}">
+    </head>
+    <body>
+        <main>
+        <div id="preloader">            
+            <div class="preloader-inner">
+                <i class="preloader-icon thm-clr flaticon-kaaba"></i>
+            </div>
+        </div><!-- Page Loader -->
+        
+        <header class="stick style1 w-100">
+            <div class="topbar bg-color1 d-flex flex-wrap justify-content-center w-100">
+                <ul class="topbar-info-list mb-0 list-unstyled d-inline-flex">
+                    <li><i class="thm-clr flaticon-sun"></i>Sunrise :<span class="thm-clr">5:05am</span></li>
+                    <li><i class="thm-clr flaticon-moon"></i>Sunset :<span class="thm-clr">7:14pm</span></li>
+                    <li class="w-10"> <div id="google_translate_element" class="gt" style="border: none;
+                        background: none;"></div>
+                    </li>
+                </ul>
+                <!-- <ul class="topbar-info-list mb-0 list-unstyled d-inline-flex">
+                    <li><i class="thm-clr flaticon-sun"></i>Sunrise At: <span class="thm-clr">5:05am</span></li>
+                    <li><i class="thm-clr flaticon-moon"></i>Sunset At: <span class="thm-clr">7:14pm</span></li>
+                </ul> -->
+                <div class="social-links d-inline-flex">
+                    <a href="https://twitter.com/" title="Twtiiter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/" title="Linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div><!-- Topbar -->
+            <div class="logo-menu-wrap d-flex flex-wrap justify-content-between w-100">
+                <div class="logo position-relative thm-layer opc7 back-blend-multiply thm-bg" style="background-image: url(assets/images/pattern-bg.jpg);"><h1 class="mb-0"><a href="index.html" title="Home"><img class="img-fluid" src="{% static 'assets/images/logo.png' %}" alt="Logo" srcset="{% static 'assets/images/retina-logo.png'%}"></a></h1></div><!-- Logo -->
+                <nav class="d-flex flex-wrap align-items-center justify-content-center">
+                    <div class="header-left">
+                        <ul class="mb-0 list-unstyled d-inline-flex">
+                            <li class=" "><a href="{% url 'm-home' %}" title=""> Home</a>
+                                <!-- <ul class="mb-0 list-unstyled">
+                                    <li><a href="index.html" title="">Homepage 1</a></li>
+                                    <li><a href="index2.html" title="">Homepage 2</a></li>
+                                    <li><a href="index3.html" title="">Homepage 3</a></li>
+                                </ul> -->
+                            </li>
+                            <!-- <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Blog</a>
+                                <ul class="mb-0 list-unstyled">
+                                    <li><a href="blog.html" title="">Blog Style 1</a></li>
+                                    <li><a href="blog2.html" title="">Blog Style 2</a></li>
+                                    <li><a href="blog-detail.html" title="">Blog Detail</a></li>
+                                </ul>
+                            </li> -->
+                            <!-- <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Pages</a>
+                                <ul class="mb-0 list-unstyled">
+                                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Scholars</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="scholar-style1.html" title="">Scholar Style 1</a></li>
+                                            <li><a href="scholar-style2.html" title="">Scholar Style 2</a></li>
+                                            <li><a href="scholar-detail.html" title="">Scholar Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Urgent Donation</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="urgent-donation.html" title="">Urgent Donation</a></li>
+                                            <li><a href="donation-detail.html" title="">Donation Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Online Courses</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="online-courses.html" title="">Online Courses</a></li>
+                                            <li><a href="online-courses-detail.html" title="">Online Courses Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Services</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="services.html" title="">Services Style 1</a></li>
+                                            <li><a href="services2.html" title="">Services Style 2</a></li>
+                                            <li><a href="services-detail.html" title="">Services Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Gallery</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="gallery.html" title="">Gallery Style 1</a></li>
+                                            <li><a href="gallery2.html" title="">Gallery Style 2</a></li>
+                                            <li><a href="gallery3.html" title="">Gallery Style 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Events</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="events.html" title="">Events</a></li>
+                                            <li><a href="event-detail.html" title="">Event Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Sermons</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="sermons.html" title="">Sermons</a></li>
+                                            <li><a href="sermons-detail.html" title="">Sermons Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="audio-listening.html" title="">Audio Listening</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Products</a>
+                                <ul class="mb-0 list-unstyled">
+                                    <li><a href="products.html" title="">Our Products</a></li>
+                                    <li><a href="product-detail.html" title="">Product Detail</a></li>
+                                    <li><a href="cart.html" title="">Product Cart</a></li>
+                                    <li><a href="checkout.html" title="">Product Checkout</a></li>
+                                </ul>
+                            </li> -->
+                            <li><a href="{% url 'm-about' %}" title="">About Us</a></li>
+                            <li><a href="{% url 'm-contact' %}" title="">Contact Us</a></li>
+                            <li><a href="{% url 'm-statistics' %}" title="">Statistics</a></li>                            
+                            <li><div id="google_translate_element" class="gt" style="border: none;
+                                background: none;"></div></li>
+                        </ul>
+                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="header-right">
+                        
+                        {% if not request.user.is_authenticated %}
+
+                            <a class="thm-btn thm-bg" href="{% url 'm-register' %}" title="">Register<span></span><span></span><span></span><span></span></a>
+                            <a class="thm-btn thm-bg" href="{% url 'm-login' %}" title="">Login<span></span><span></span><span></span><span></span></a>
+                  
+                        {% else %}
+                            <a class="thm-btn thm-bg" href="{% url 'm-dashboard' %}" title="">Dashboard </a>
+                            <a class="thm-btn thm-bg" href="{% url 'signout' %}" title="">Logout<span></span><span></span><span></span><span></span></a>
+
+                        {% endif %}
+
+                   </div>
+                </nav>
+            </div><!-- Logo Menu Wrap -->
+        </header><!-- Header -->
+        <div class="sticky-menu">
+            <div class="container">
+                <div class="sticky-menu-inner d-flex flex-wrap align-items-center justify-content-between w-100">
+                    <div class="logo"><h1 class="mb-0"><a href="{% url 'm-home' %}" title="Home">
+                        <img class="img-fluid" src="{% static 'assets/images/logo3.png' %}"alt="Logo" srcset="{% static 'assets/images/retina-logo3.png' %}"></a></h1></div><!-- Logo -->
+                    <nav class="d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="header-left">
+                            <ul class="mb-0 list-unstyled d-inline-flex">
+                                <li class=" "><a href="{% url 'm-home' %}" title="">Home</a>
+                                    <ul class="mb-0 list-unstyled">
+                                        <!-- <li><a href="{% url 'm-home' %}" title="">Homepage 1</a></li> -->
+                                        <!-- <li><a href="{% url 'm-home' %}" title="">Homepage 2</a></li>
+                                        <li><a href="index3.html" title="">Homepage 3</a></li> -->
+                                    </ul>
+                                </li>
+                                <!-- <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Blog</a>
+                                    <ul class="mb-0 list-unstyled">
+                                        <li><a href="{% url 'm-home' %}" title="">Blog Style 1</a></li>
+                                        <li><a href="{% url 'm-home' %}" title="">Blog Style 2</a></li>
+                                        <li><a href="{% url 'm-home' %}" title="">Blog Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Pages</a>
+                                    <ul class="mb-0 list-unstyled">
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Scholars</a>
+                                            <ul class="mb-0 list-unstyled">
+                                                <li><a href="{% url 'm-home' %}" title="">Scholar Style 1</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Scholar Style 2</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Scholar Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Urgent Donation</a>
+                                            <ul class="mb-0 list-unstyled">
+                                                <li><a href="{% url 'm-home' %}" title="">Urgent Donation</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Donation Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Online Courses</a>
+                                            <ul class="mb-0 list-unstyled">
+                                                <li><a href="{% url 'm-home' %}" title="">Online Courses</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Online Courses Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Services</a>
+                                            <ul class="mb-0 list-unstyled">
+                                                <li><a href="{% url 'm-home' %}" title="">Services Style 1</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Services Style 2</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Services Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Gallery</a>
+                                            <ul class="mb-0 list-unstyled">
+                                                <li><a href="{% url 'm-home' %}" title="">Gallery Style 1</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Gallery Style 2</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Gallery Style 3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Events</a>
+                                            <ul class="mb-0 list-unstyled">
+                                                <li><a href="{% url 'm-home' %}" title="">Events</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Event Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Sermons</a>
+                                            <ul class="mb-0 list-unstyled">
+                                                <li><a href="{% url 'm-home' %}" title="">Sermons</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Sermons Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{% url 'm-home' %}" title="">Audio Listening</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Products</a>
+                                    <ul class="mb-0 list-unstyled">
+                                        <li><a href="{% url 'm-home' %}" title="">Our Products</a></li>
+                                        <li><a href="{% url 'm-home' %}" title="">Product Detail</a></li>
+                                        <li><a href="{% url 'm-home' %}" title="">Product Cart</a></li>
+                                        <li><a href="{% url 'm-home' %}" title="">Product Checkout</a></li>
+                                    </ul>
+                                </li> -->
+                                <li><a href="{% url 'm-about' %}" title="">About Us</a></li>
+                                <li><a href="{% url 'm-contact' %}" title="">Contact Us</a></li>
+                                <li><a href="{% url 'm-statistics' %}" title="">Statistics</a></li>
+                                <li> <div id="google_translate_element" class="gt" style="border: none;
+                                    background: none;"></div></li>
+                            </ul>
+                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="header-right">
+                            <div id="google_translate_element" class="gt" style="border: none;
+                        background: none;"></div>
+                            {% if not request.user.is_authenticated %}
+    
+                                <a class="thm-btn thm-bg" href="{% url 'm-register' %}" title="">Register<span></span><span></span><span></span><span></span></a>
+                                <a class="thm-btn thm-bg" href="{% url 'm-login' %}" title="">Login<span></span><span></span><span></span><span></span></a>
+                      
+                            {% else %}
+                                <a class="thm-btn thm-bg" href="{% url 'm-dashboard' %}" title="">Dashboard </a>
+                            
+                                <a class="thm-btn thm-bg" href="{% url 'signout' %}" title="">Logout<span></span><span></span><span></span><span></span></a>
+    
+                            {% endif %}
+    
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div><!-- Sticky Menu -->
+        <div class="rspn-hdr">
+            <div class="rspn-mdbr">
+                <div class="rspn-scil">
+                    <a href="https://twitter.com/" title="Twtiiter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/" title="Linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                 <div id="google_translate_element" class="gt"  ></div>
+                
+                <!-- <form class="rspn-srch">
+                    <input type="text" placeholder="Enter Your Keyword">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form> -->
+            </div>
+            <div class="lg-mn">
+                <div class="logo"><a href="{% url 'm-home' %}" title="Home"><img src="{% static 'assets/images/logo3.png' %}"alt="Logo"></a></div>
+                <div class="rspn-cnt">
+                    <span><i class="thm-clr far fa-envelope"></i><a href="javascript:void(0);" title="">  
+                      
+                        {% for posts in posts%}{{posts.author}}  {% endfor %}
+                    </a></span>
+                    <span><i class="thm-clr fas fa-phone-alt"></i>+96 125 554 24 5</span>
+                </div>
+                <span class="rspn-mnu-btn"><i class="fa fa-list-ul"></i></span>
+            </div>
+            <div class="rsnp-mnu">
+                <span class="rspn-mnu-cls"><i class="fa fa-times"></i></span>
+                <ul class="mb-0 list-unstyled w-100">
+                    <li class=""><a href="{% url 'm-home' %}" title="">Home</a>
+                        <ul class="mb-0 list-unstyled">
+                            <!-- <li><a href="{% url 'm-home' %}" title="">Homepage 1</a></li>
+                            <li><a href="{% url 'm-home' %}" title="">Homepage 2</a></li>
+                            <li><a href="{% url 'm-home' %}" title="">Homepage 3</a></li> -->
+                        </ul>
+                    </li>
+                    <!-- <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Blog</a>
+                        <ul class="mb-0 list-unstyled">
+                            <li><a href="{% url 'm-home' %}" title="">Blog Style 1</a></li>
+                            <li><a href="{% url 'm-home' %}" title="">Blog Style 2</a></li>
+                            <li><a href="{% url 'm-home' %}" title="">Blog Detail</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Pages</a>
+                        <ul class="mb-0 list-unstyled">
+                            <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Scholars</a>
+                                <ul class="mb-0 list-unstyled">
+                                    <li><a href="{% url 'm-home' %}" title="">Scholar Style 1</a></li>
+                                    <li><a href="{% url 'm-home' %}" title="">Scholar Style 2</a></li>
+                                    <li><a href="{% url 'm-home' %}" title="">Scholar Detail</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Urgent Donation</a>
+                                <ul class="mb-0 list-unstyled">
+                                    <li><a href="{% url 'm-home' %}" title="">Urgent Donation</a></li>
+                                    <li><a href="{% url 'm-home' %}" title="">Donation Detail</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Online Courses</a>
+                                <ul class="mb-0 list-unstyled">
+                                    <li><a href="{% url 'm-home' %}" title="">Online Courses</a></li>
+                                    <li><a href="{% url 'm-home' %}" title="">Online Courses Detail</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Services</a>
+                                <ul class="mb-0 list-unstyled">
+                                    <li><a href="{% url 'm-home' %}" title="">Services Style 1</a></li>
+                                    <li><a href="{% url 'm-home' %}" title="">Services Style 2</a></li>
+                                    <li><a href="{% url 'm-home' %}" title="">Services Detail</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Gallery</a>
+                                <ul class="mb-0 list-unstyled">
+                                    <li><a href="{% url 'm-home' %}" title="">Gallery Style 1</a></li>
+                                    <li><a href="{% url 'm-home' %}" title="">Gallery Style 2</a></li>
+                                    <li><a href="{% url 'm-home' %}" title="">Gallery Style 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Sermons</a>
+                                <ul class="mb-0 list-unstyled">
+                                    <li><a href="{% url 'm-home' %}" title="">Sermons</a></li>
+                                    <li><a href="{% url 'm-home' %}" title="">Sermons Detail</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'm-home' %}" title="">Audio Listening</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Our Events</a>
+                        <ul class="mb-0 list-unstyled">
+                            <li><a href="{% url 'm-home' %}" title="">Events</a></li>
+                            <li><a href="{% url 'm-home' %}" title="">Event Detail</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">Products</a>
+                        <ul class="mb-0 list-unstyled">
+                            <li><a href="{% url 'm-home' %}" title="">Our Products</a></li>
+                            <li><a href="{% url 'm-home' %}" title="">Product Detail</a></li>
+                            <li><a href="{% url 'm-home' %}" title="">Product Cart</a></li>
+                            <li><a href="{% url 'm-home' %}" title="">Product Checkout</a></li>
+                        </ul>
+                    </li> -->
+                    <li><a href="{% url 'm-about' %}" title="">About Us</a></li>
+                    <li><a href="{% url 'm-contact' %}" title="">Contact Us</a></li>
+                    <li><a href="{% url 'm-statistics' %}" title="">Statistics</a></li>
+                    <li><div id="google_translate_element" class="gt" style="border: none;
+                        background: none;"></div></li>
+                </ul><hr>
+                <div class="">
+                    <div id="google_translate_element" class="gt" style="border: none;
+                        background: none;"></div>
+                    {% if not request.user.is_authenticated %}
+
+                        <a class="thm-btn thm-bg" href="{% url 'm-register' %}" title="">Register<span></span><span></span><span></span><span></span></a>
+                        <a class="thm-btn thm-bg" href="{% url 'm-login' %}" title="">Login<span></span><span></span><span></span><span></span></a>
+              
+                    {% else %}
+                        <a class="thm-btn thm-bg" href="{% url 'm-dashboard' %}" title="">Dashboard </a>
+                            
+                        <a class="thm-btn thm-bg" href="{% url 'signout' %}" title="">Logout<span></span><span></span><span></span><span></span></a>
+
+                    {% endif %}
+
+                </div>
+            </div><!-- Responsive Menu -->
+        </div><!-- Responsive Header -->
+        {% block content %}
+        {% endblock content %}
+        
+<footer>
+    <div class="w-100 pt-100 dark-layer pb-50 opc85 position-relative">
+        <div class="fixed-bg patern-bg back-blend-multiply dark-bg" style="background-image: url(assets/images/pattern-bg.jpg);"></div>
+        <div class="container">
+            <div class="footer-data w-100">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-3">
+                        <div class="widget w-100">
+                            <div class="logo"><h1 class="mb-0"><a href="{% url 'm-home' %}" title="Home"><img class="img-fluid" src="{% static 'assets/images/logo2.png' %}" alt="Logo" srcset="{% static 'assets/images/logo2.png' %}"></a></h1></div>
+                            <p class="mb-0">Lorem ipsum dolor sit amet, coteudtu sicing elit, sed do eiusmod tempor inc dntut labore et adipi.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-9">
+                        <div class="row justify-content-between">
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-lg-6">
+                                        <div class="widget w-100">
+                                            <h4 class="widget-title">Information</h4>
+                                            <ul class="mb-0 list-unstyled w-100">
+                                                <li><a href="{% url 'm-home' %}" title="">Online Courses</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Audio Listening</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Our Blog</a></li>
+                                                <li><a href="{% url 'm-home' %}" title="">Our Events</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-6">
+                                        <div class="widget w-100">
+                                            <h4 class="widget-title">Contact Info</h4>
+                                            <ul class="cont-info-list2 mb-0 list-unstyled w-100">
+                                                <li><i class="thm-clr">P:</i>341 22 245 225</li>
+                                                <li><i class="thm-clr">E:</i><a href="javascript:void(0);" title="">username@domain.com</a></li>
+                                                <li>425 1st Street, San Francisco, California, USA</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-6 col-lg-5">
+                                <h4 class="widget-title">Let Us Help You</h4>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-lg-6">
+                                        <div class="widget w-100">
+                                            <ul class="mb-0 list-unstyled w-100">
+                                                <li><a href="about.html" title="">About Maktab</a></li>
+                                                <li><a href="urgent-donation.html" title="">Urgent Donation</a></li>
+                                                <li><a href="services.html" title="">Our Services</a></li>
+                                                <li><a href="sermons.html" title="">Our Sermons</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-6">
+                                        <div class="widget w-100">
+                                            <ul class="mb-0 list-unstyled w-100">
+                                                <li><a href="products.html" title="">Our Products</a></li>
+                                                <li><a href="scholar-style1.html" title="">Our Scholars</a></li>
+                                                <li><a href="contact.html" title="">Contact Us</a></li>
+                                                <li><a href="gallery.html" title="">Maktab Gallery</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Footer Data -->
+        </div>
+    </div>
+</footer><!-- Footer -->
+<div class="bottom-bar dark-bg2 text-center w-100"><div id="google_translate_element" class="gt" style="border: none;
+    background: none;"></div>
+    <p class="mb-0"><a href="" title="Home">Maktab</a> - Copyright 2023. Design by <a href="" title="maskan" target="_blank">maskan</a></p>
+</div><!-- Bottom Bar -->
+        </main>
+        <script src="{% static 'assets/js/jquery.min.js'%} "></script>
+        <script src="{% static 'assets/js/popper.min.js'%} "></script>
+        <script src="{% static 'assets/js/bootstrap.min.js'%} "></script>
+        <script src="{% static 'assets/js/wow.min.js'%} "></script>
+        <script src="{% static 'assets/js/counterup.min.js'%} "></script>
+        <script src="{% static 'assets/js/jquery.fancybox.min.js'%} "></script>
+        <script src="{% static 'assets/js/jquery.bootstrap-touchspin.min.js'%} "></script>
+        <script src="{% static 'assets/js/perfect-scrollbar.min.js'%} "></script>
+        <script src="{% static 'assets/js/slick.min.js'%} "></script>
+        <!-- <script src="{% static 'assets/js/particles.min.js'%} "></script>
+        <script src="{% static 'assets/js/particle-int.js'%} "></script> -->
+        <script src="{% static 'assets/js/musicplayer-min.js'%} "></script>
+        <script src="{% static 'assets/js/custom-scripts.js'%} "></script>
+    
+        <script>
+            const countrySelect = document.getElementById('country');
+            const stateSelect = document.getElementById('state');
+            const citySelect = document.getElementById('city');
+    
+            countrySelect.addEventListener('change', () => {
+                const selectedCountryId = countrySelect.value;
+                
+                fetch(`/get_states/?country_id=${selectedCountryId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        stateSelect.innerHTML = '<option value=" ">state</option>';
+                        data.states.forEach(state => {
+                            const option = document.createElement('option');
+                            option.value = state.id;
+                            option.textContent = state.name;
+                            stateSelect.appendChild(option);
+                           
+                        });
+                    });
+                   
+            });
+    
+            stateSelect.addEventListener('change', () => {
+                const selectedStateId = stateSelect.value;
+                fetch(`/get_cities/?state_id=${selectedStateId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        citySelect.innerHTML = '<option value=" ">city </option>';
+                        data.cities.forEach(city => {
+                            const option = document.createElement('option');
+                            option.value = city.id;
+                            option.textContent = city.name;
+                            citySelect.appendChild(option);
+                        });
+                    });
+            });
+        </script>
+
+        <!--  -->
+        <!--  -->
+        <script>
+             // Attach an event listener to the search input field
+                const searchInput = document.getElementById('search-input');
+                const searchResultsContainer = document.getElementById('search-results');
+
+                searchInput.addEventListener('input', () => {
+                    const searchTerm = searchInput.value.trim();
+
+                    // Send an AJAX request to the server with the search term
+                    if (searchTerm !== '') {
+                        fetch(`/search/?term=${searchTerm}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                // Display the search results in the container
+                                searchResultsContainer.innerHTML = ''; // Clear previous results
+                                for (const category in data) {
+                                    const results = data[category];
+                                    const categoryContainer = document.createElement('div');
+                                    categoryContainer.innerHTML = `<h3>${category}</h3>`;
+                                    for (const item in results) {
+                                        categoryContainer.innerHTML += `<p>${item}: ${results[item]}</p>`;
+                                    }
+                                    searchResultsContainer.appendChild(categoryContainer);
+                                }
+                            });
+                    } else {
+                        // Clear search results when search term is empty
+                        searchResultsContainer.innerHTML = '';
+                    }
+                });
+        </script>
+        <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+            }
+        </script>
+        <script>
+            $(document).ready(function() {
+                var preloader = $('#preloader');
+                $('#form_edit_id').submit(function(e) {
+                    e.preventDefault();  // Prevent the default form submission
+                    preloader.show();
+                    $.ajax({
+                        type: 'POST',
+                        url: '{% url 'edit_profile' %}',  // URL to your Django view
+                        data: $(this).serialize(),  // Serialize the form data
+                        success: function(response) {
+                            preloader.hide();
+                            // Handle the success response here, if needed
+                            // You can update elements on the page with the new data
+                            // For example, update the email field
+                            console.log(response.user_profile);
+                            $('#email').text(response.user_profile);
+                        },
+                        // error: function() {
+                        //     // Hide the loader in case of an error
+                        //     preloader.hide();
+
+                        //     // Handle the error here, if needed
+                        // }
+                    });
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                var preloader = $('#preloader');
+                $('#form_Zikr_count_id').submit(function(e) {
+                    e.preventDefault();  // Prevent the default form submission
+                    // preloader.show();
+                    $.ajax({
+                        type: 'POST',
+                        url: '{% url 'm-dashboard' %}',  // URL to your Django view
+                        data: $(this).serialize(),  // Serialize the form data
+                        success: function(response) {
+                            // preloader.hide();
+                            // Handle the success response here, if needed
+                            // You can update elements on the page with the new data
+                            // For example, update the email field
+                            // console.log(response);
+                            console.log("Response received:", response.zikr_count);
+                            $('#zikr_count').text(response.zikr_count);
+                            // $('#current_day_zikr').text(response.current_day_zikr);
+                            // $('#total_zikr_count').text(response.total_zikr_count);
+                        },
+                        error: function() {
+                            // Hide the loader in case of an error
+                            preloader.hide();
+
+                            // Handle the error here, if needed
+                        }
+                    });
+                });
+            });
+        </script>
+<style>
+      
+    /* Add your loader styling here */
+    #preloader {
+position: fixed;
+top: 0;
+z-index: 99999;
+right: 0;
+bottom: 0;
+left: 0;
+text-align: center;
+background-color: #fff;
+}
+.preloader-inner {
+height: 9.375rem;
+line-height: 9.375rem;
+width: 9.375rem;
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50% , -50%);
+-ms-transform: translate(-50% , -50%);
+-o-transform: translate(-50% , -50%);
+transform: translate(-50% , -50%);
+}
+.preloader-inner:before {
+content: "";
+position: absolute;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+-webkit-border-radius: 50%;
+border-radius: 50%;
+border: 2px solid;
+-webkit-animation: rotate 5s infinite linear;
+-ms-animation: rotate 5s infinite linear;
+-o-animation: rotate 5s infinite linear;
+animation: rotate 5s infinite linear;
+}
+.preloader-icon {
+display: inline-block;
+font-size: 3.75rem;
+-webkit-animation: zoom2 3s infinite linear;
+-ms-animation: zoom2 3s infinite linear;
+-o-animation: zoom2 3s infinite linear;
+animation: zoom2 3s infinite linear;
+}
+</style>
+    
+    
+
+ 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    </body>	
+</html>

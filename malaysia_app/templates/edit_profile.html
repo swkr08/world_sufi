@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+ 
+<!-- <section>
+    <div class="w-100 pt-80 black-layer pb-70 opc65 position-relative">
+        <div class="fixed-bg" style="background-image: url(assets/images/sec-botm-mckp.png);"></div>
+       
+    </div>
+</section> -->
+
+<section>
+    <div class="w-100  pb-260 position-relative">
+        <img class="sec-botm-rgt-mckp img-fluid position-absolute" src="{% static 'assets/images/sec-botm-mckp.png' %}" alt="Sec Bottom Mockup">
+        <div class="container">
+            <div class="prod-detail-wrap w-100">
+                
+                <div class="prod-detail-tabs position-relative mt-100 w-100">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#description">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#comments">Zikr Count</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#reviews">Logout</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        
+                        <div class="tab-pane fade" id="profile">
+                           
+                            <!-- count -->
+
+                            <section>
+                                <div class="w-100   position-relative">
+                                   
+                                    <div class="container">
+                                        <div class="checkout-wrap w-100">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <form method="post" action="/update/{{object.id}}" class="checkout-form w-100"   enctype="multipart/form-data"> 
+                                                        {% csrf_token %}
+                                                        <h2>Profile Information</h2>
+                                                        <div class="row mrg10">
+                                                             
+                                                            <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                                <input type="text" placeholder="{{ user_profile.username }}">
+                                                            </div> -->
+                                                           
+                                                            <div class="col-md-12 col-sm-12 col-lg-6">
+                                                                <input type="number"name="phone" placeholder="{{ user_profile.phone }}  "  value="{{ user_profile.phone }}">
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 col-lg-6">
+                                                                <input type="email" name="email"placeholder="{{ user_profile.email }}"  value="{{ user_profile.email }}">
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 col-lg-6">
+                                                                <input type="text" name="country"  placeholder="{{ user_profile.country }}"value="{{ user_profile.country }}">
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                                                <input type="text"   name="state" placeholder=" {{ user_profile.state }}" value="{{ user_profile.state }}">
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                                                <input type="text" name="city" placeholder="{{ user_profile.city }}" value="{{ user_profile.city }}">
+                                                            </div>
+                                                           
+                                                            <!-- <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                <input type="tel" placeholder="Credit Card Number">
+                                                            </div> -->
+                                                          
+                                                            <!-- <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                <a class="d-inline-block thm-clr" href="javascript:void(0);" title="">If you can't Have an Account so Login First</a>
+                                                                <textarea placeholder="Order Note"></textarea>
+                                                            </div> -->
+                                                            <div class="col-md-12 col-sm-12 col-lg-12"><hr></div>
+                                                            <button class="thm-btn bg-color1" type="submit">UPDATE  PROFILE <span></span><span></span><span></span><span></span></button>
+                                                           
+                                                            
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                 
+                                            </div>
+                                        </div><!-- Checkout Wrap -->
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- count -->
+                        </div>
+                        
+                    </div>
+                </div>
+            </div><!-- Product Detail Wrap -->
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+{% endblock content %}

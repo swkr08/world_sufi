@@ -1,0 +1,225 @@
+{% extends 'layout.html' %}
+{% load static%}
+{% block content %}
+
+<section>
+    <div class="w-100  position-relative">
+        <!-- <img class="sec-botm-rgt-mckp img-fluid position-absolute" src="assets/images/sec-botm-mckp.png" alt="Sec Bottom Mockup"> -->
+        <h1>WORLD STATISTICS</h1>
+        <div class="container">
+            <!-- <div class="row mrg10">Username - &nbsp; <h5 class="donate-goal d-block thm-clr"> {{ UserProfile_user.username }}</h5>
+            
+            </div> -->
+
+            <hr>
+            <!--  -->
+
+            <div class="coupon-cart-total-wrap d-flex flex-wrap w-100">
+                <div class="coupon-wrap">
+                    <div class="coupon-title w-100">
+                        <h3 class="mb-0"> {{ UserProfile_user.username }}</h3>
+                        <p class="mb-0"> your Username</p>
+                    </div>
+                    <div class="coupon-inner d-flex flex-wrap">
+                        <form class="cont-form w-100">
+                            <input type="text" name="search_rec" class="">
+                            <button class="thm-btn thm-bg" type="submit"><a class="nav-link"
+                                    data-toggle="tab" href="#statistics">Search</a>
+                                <span></span><span></span><span></span><span></span></button>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div><!-- Coupon & Cart Total Wrap -->
+
+            <!--  -->
+
+
+            <!-- <form action="" method="">
+                    <input type="text"  name="search_rec">
+                    <button type="submit">search</button>
+                </form> -->
+            <hr><br>
+
+
+            <!-- <input type="text" id="search-input" placeholder="Search...">
+                    <div id="search-results"></div> -->
+
+            <div class="donat-wrap w-100">
+                <h6>Search Results:</h6>
+                <div class="row">
+
+                    {% if search_results %}
+
+
+                    {% for category, results in search_results.items %}
+
+
+                    {% for name, count in results.items %}
+                    <div class="col-md-12 col-sm-12 col-lg-6">
+                        <div class="urgent-donat-box w-100">
+                            <!-- <div class="urgent-donat-img overflow-hidden position-relative w-100">
+                                                    <img class="img-fluid w-100" src="{% static 'assets/images/resources/urgent-donat-img1-1.jpg' %}" alt="Urgent Donation Image 1">
+                                                    <a class="thm-btn thm-bg position-absolute" href="" title="">Go On <span></span><span></span><span></span><span></span></a>
+                                                </div> -->
+                            <div class="urgent-donat-info pat-bg gray-layer opc8 position-relative back-blend-multiply gray-bg w-100"
+                                style="background-image: url(assets/images/pattern-bg.jpg);">
+                                <span class="donate-goal d-block thm-clr">zikr count By {{
+                                    category }}:</span>
+                                <h3 class="mb-0"><a href="" title="">{{name}}</a></h3>
+                                <ul
+                                    class="urgent-donat-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                    <li class="thm-clr"></li>
+                                    <li><i class="fas fa-heart thm-clr"></i> {{count}}</li>
+                                </ul>
+                                <div class="urgent-donat-info-raised pat-bg thm-layer opc7 position-absolute back-blend-multiply thm-bg w-100"
+                                    style="background-image: url(assets/images/pattern-bg.jpg);">
+                                    <div class="urgent-progress" id="goal-prog1"><span>50
+                                            %</span></div>
+                                    <span class="d-block"> {{count}}</span>
+                                    <i class="d-block">count</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% endfor %}
+                    {% else %}
+                    <h6>no results found</h6>
+
+                    {% endif %}
+
+                    <hr><br>
+                    {% for country, total_count in country_total_counts.items %}
+
+
+                    <div class="col-md-12 col-sm-12 col-lg-6">
+                        <div class="urgent-donat-box w-100">
+                            <!-- <div class="urgent-donat-img overflow-hidden position-relative w-100">
+                                <img class="img-fluid w-100" src="{% static 'assets/images/resources/urgent-donat-img1-1.jpg' %}" alt="Urgent Donation Image 1">
+                                <a class="thm-btn thm-bg position-absolute" href="" title="">Go On <span></span><span></span><span></span><span></span></a>
+                            </div> -->
+                            <div class="urgent-donat-info pat-bg gray-layer opc8 position-relative back-blend-multiply gray-bg w-100"
+                                style="background-image: url(assets/images/pattern-bg.jpg);">
+                                <span class="donate-goal d-block thm-clr">zikr count By
+                                    Country</span>
+                                <h3 class="mb-0"><a href="" title="">{{country}}</a></h3>
+                                <ul
+                                    class="urgent-donat-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                    <li class="thm-clr"></li>
+                                    <li><i class="fas fa-heart thm-clr"></i> {{total_count}}
+                                    </li>
+                                </ul>
+                                <div class="urgent-donat-info-raised pat-bg thm-layer opc7 position-absolute back-blend-multiply thm-bg w-100"
+                                    style="background-image: url(assets/images/pattern-bg.jpg);">
+                                    <div class="urgent-progress" id="goal-prog1"><span>50
+                                            %</span></div>
+                                    <span class="d-block"> {{total_count}}</span>
+                                    <i class="d-block">count</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% for state, total_count in state_total_counts.items %}
+
+
+                    <div class="col-md-12 col-sm-12 col-lg-6">
+                        <div class="urgent-donat-box w-100">
+                            <!-- <div class="urgent-donat-img overflow-hidden position-relative w-100">
+                                <img class="img-fluid w-100" src="{% static 'assets/images/resources/urgent-donat-img1-1.jpg' %}" alt="Urgent Donation Image 1">
+                                <a class="thm-btn thm-bg position-absolute" href="" title=""> Go On  <span></span><span></span><span></span><span></span></a>
+                            </div> -->
+                            <div class="urgent-donat-info pat-bg gray-layer opc8 position-relative back-blend-multiply gray-bg w-100"
+                                style="background-image: url(assets/images/pattern-bg.jpg);">
+                                <span class="donate-goal d-block thm-clr">zikr count By
+                                    State</span>
+                                <h3 class="mb-0"><a href="" title="">{{state}}</a></h3>
+                                <ul
+                                    class="urgent-donat-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                    <li class="thm-clr"></li>
+                                    <li><i class="fas fa-heart thm-clr"></i> {{total_count}}
+                                    </li>
+                                </ul>
+                                <div class="urgent-donat-info-raised pat-bg thm-layer opc7 position-absolute back-blend-multiply thm-bg w-100"
+                                    style="background-image: url(assets/images/pattern-bg.jpg);">
+                                    <div class="urgent-progress" id="goal-prog1"><span>50
+                                            %</span></div>
+                                    <span class="d-block"> {{total_count}}</span>
+                                    <i class="d-block">count</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% for city, total_count in city_total_counts.items %}
+
+
+                    <div class="col-md-12 col-sm-12 col-lg-6">
+                        <div class="urgent-donat-box w-100">
+                            <!-- <div class="urgent-donat-img overflow-hidden position-relative w-100">
+                                <img class="img-fluid w-100" src="{% static 'assets/images/resources/urgent-donat-img1-1.jpg' %}" alt="Urgent Donation Image 1">
+                                <a class="thm-btn thm-bg position-absolute" href="" title="">  Go On <span></span><span></span><span></span><span></span></a>
+                            </div> -->
+                            <div class="urgent-donat-info pat-bg gray-layer opc8 position-relative back-blend-multiply gray-bg w-100"
+                                style="background-image: url(assets/images/pattern-bg.jpg);">
+                                <span class="donate-goal d-block thm-clr">zikr count By
+                                    City</span>
+                                <h3 class="mb-0"><a href="" title="">{{city}}</a></h3>
+                                <ul
+                                    class="urgent-donat-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                    <li class="thm-clr"></li>
+                                    <li><i class="fas fa-heart thm-clr"></i> {{total_count}}
+                                    </li>
+                                </ul>
+                                <div class="urgent-donat-info-raised pat-bg thm-layer opc7 position-absolute back-blend-multiply thm-bg w-100"
+                                    style="background-image: url(assets/images/pattern-bg.jpg);">
+                                    <div class="urgent-progress" id="goal-prog1"><span>50
+                                            %</span></div>
+                                    <span class="d-block"> {{total_count}}</span>
+                                    <i class="d-block">count</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div><!-- Urgent Donation Wrap -->
+            <div
+                class="pagination-wrap mt-40 d-flex flex-wrap justify-content-center text-center w-100">
+                <ul class="pagination mb-0">
+                    <li class="page-item prev"><a class="page-link"
+                            href="javascript:void(0);" title=""><i
+                                class="fas fa-long-arrow-alt-left"></i></a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);"
+                            title="">1</a></li>
+                    <li class="page-item active"><a class="page-link"
+                            href="javascript:void(0);" title="">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);"
+                            title="">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);"
+                            title="">4</a></li>
+                    <li class="page-item pg-rang">...........</li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);"
+                            title="">24</a></li>
+                    <li class="page-item next"><a class="page-link"
+                            href="javascript:void(0);" title=""><i
+                                class="fas fa-long-arrow-alt-right"></i></a></li>
+                </ul>
+            </div><!-- Pagination Wrap -->
+        </div>
+    </div>
+</section>
+<!-- count -->
+
+
+
+
+
+{% endblock content %}

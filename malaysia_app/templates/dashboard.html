@@ -1,0 +1,728 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- <section>
+    <div class="w-100 pt-80 black-layer pb-70 opc65 position-relative">
+        <div class="fixed-bg" style="background-image: url(assets/images/sec-botm-mckp.png);"></div>
+       
+    </div>
+</section> -->
+
+<section>
+    <div class="w-100  pb-260 position-relative">
+        <img class="sec-botm-rgt-mckp img-fluid position-absolute" src="{% static 'assets/images/sec-botm-mckp.png' %}"
+            alt="Sec Bottom Mockup">
+        <div class="container">
+            <div class="prod-detail-wrap w-100">
+
+                <div class="prod-detail-tabs position-relative mt-100 w-100">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link active" data-toggle="tab"
+                                href="#description">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#statistics">World
+                                Statistics</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#comments">Zikr Count</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#status">Statistics</a></li> -->
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#reviews">Logout</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="description">
+                            <!-- dashboard -->
+                            <section>
+                                <div class="w-100   position-relative">
+                                    <div class="container">
+                                        <div class="post-detail-wrap w-100">
+                                            <div class="row">
+                                                <!-- <div class="col-md-12 col-sm-12 col-lg-9"> -->
+                                                <div class="sec-title left-icon w-100">
+                                                    <div class="sec-title-inner d-inline-block">
+                                                        <i class="flaticon-rub-el-hizb thm-clr"></i>
+                                                        <h2 class="mb-0">Dashboard</h2>
+                                                        <p class="mb-0 thm-clr">Ethical & Moral Beliefs That Guides</p>
+                                                    </div>
+                                                </div><!-- Sec Title -->
+                                                <div class="post-detail-inner w-100">
+                                                    <div class="post-detail-img mb-0 w-100">
+                                                        <img class="img-fluid w-100"
+                                                            src="{% static 'assets/images/screen-10.png' %}"
+                                                            alt="Donation Detail Image 1">
+                                                    </div>
+                                                    <div
+                                                        class="donation-detail-info-wrap d-flex flex-wrap align-items-end w-100">
+                                                        <div class="urgent-donat-info pat-bg gray-layer opc85 position-relative back-blend-multiply gray-bg w-100"
+                                                            style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                            <span class="donate-goal d-block thm-clr">Goal:
+                                                                30,00,000</span>
+                                                            <h3 class="mb-0">Zikr Count Completed</h3>
+                                                            <ul
+                                                                class="urgent-donat-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                                <li class="thm-clr">{{all_users_total_zikr }}, To reach
+                                                                </li>
+                                                                <li><i class="fas fa-heart thm-clr"></i>22 People</li>
+                                                            </ul>
+                                                            <div class="urgent-donat-info-raised pat-bg thm-layer opc7 position-absolute back-blend-multiply thm-bg w-100"
+                                                                style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                                <div class="urgent-progress" id="goal-prog1">
+                                                                    <span>{{rounded_total_percentage_completed}}
+                                                                        %</span>
+                                                                </div>
+                                                                <span class="d-block">{{all_users_total_zikr }}</span>
+                                                                <i class="d-block">Counts</i>
+                                                            </div>
+                                                        </div>
+                                                        <a class="thm-btn bg-color1" href="#comments" title=""><i
+                                                                class="mb-2 fas fa-heart d-block"></i>Zikr
+                                                            NOW<span></span><span></span><span></span><span></span></a>
+                                                    </div>
+
+
+                                                </div>
+                                                <!-- </div> -->
+
+                                            </div>
+                                        </div><!-- Post Detail Wrap -->
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- list -->
+                            <section>
+                                <div class="w-100  position-relative">
+                                    <div class="container">
+                                        <h1>INDIVIDUAL STATISTICS</h1>
+                                        <div class="event-sermon-wrap w-100">
+                                            <div class="row">
+                                                <!-- <div class="col-md-12 col-sm-12 col-lg-7"> -->
+
+                                                <div class="event-wrap2 w-100">
+                                                    <div class="event-caro">
+                                                        <h4 class="mb-0">
+
+                                                            {% for user in users_with_total_counts %}
+                                                            <div
+                                                                class="event-list-box d-flex flex-wrap align-items-center w-100">
+                                                                <div
+                                                                    class="event-img2 overflow-hidden position-relative">
+                                                                    <a href="event-detail.html" title=""><img
+                                                                            class="img-fluid w-100"
+                                                                            src="{% static 'assets/images/resources/event-mini-img1-1.jpg' %}"
+                                                                            alt="Event Mini Image 1"></a>
+                                                                </div>
+                                                                <div class="event-info2">
+                                                                    <h3 class="mb-0"><a href="" title="">{{
+                                                                            user.username }}</a> </h3>
+                                                                    <h6 class="mb-0">Total Zikr count = <a href=""
+                                                                            title=""> {{ user.total_zikr_count }}</a>
+                                                                    </h6>
+                                                                    <ul
+                                                                        class="event-meta mb-0 list-unstyled d-inline-flex flex-wrap">
+                                                                        <li class="thm-clr"><i
+                                                                                class="far fa-calendar"></i> {{
+                                                                            user.zikr_date|date:"Y-m-d H:i:s" }} </li>
+                                                                        <li class="thm-clr"><i
+                                                                                class="fas fa-location-arrow"></i>{{
+                                                                            user.zikr_count }}</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            {%endfor%}
+                                                            <!-- <div class="event-list-box d-flex flex-wrap align-items-center w-100">
+                                                                <div class="event-img2 overflow-hidden position-relative"><a href="event-detail.html" title=""><img class="img-fluid w-100" src="{% static 'assets/images/resources/event-mini-img1-2.jpg' %}" alt="Event Mini Image 2"></a></div>
+                                                                <div class="event-info2">
+                                                                    <h3 class="mb-0"><a href="event-detail.html" title="">8 Things to Strengthen the Husband-Wife Relationship in Islam</a></h3>
+                                                                    <ul class="event-meta mb-0 list-unstyled d-inline-flex flex-wrap">
+                                                                        <li class="thm-clr"><i class="far fa-calendar"></i>25 July, 2020 @ 20:00:00</li>
+                                                                        <li class="thm-clr"><i class="fas fa-location-arrow"></i>The Grand Mosque</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="event-list-box d-flex flex-wrap align-items-center w-100">
+                                                                <div class="event-img2 overflow-hidden position-relative"><a href="event-detail.html" title=""><img class="img-fluid w-100" src="{% static 'assets/images/resources/event-mini-img1-3.jpg' %}" alt="Event Mini Image 3"></a></div>
+                                                                <div class="event-info2">
+                                                                    <h3 class="mb-0"><a href="event-detail.html" title="">Moveth the Seed you Waters is Replenish Light One Meat</a></h3>
+                                                                    <ul class="event-meta mb-0 list-unstyled d-inline-flex flex-wrap">
+                                                                        <li class="thm-clr"><i class="far fa-calendar"></i>19 July, 2020 @ 20:00:00</li>
+                                                                        <li class="thm-clr"><i class="fas fa-location-arrow"></i>The Grand Mosque</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="event-list-box d-flex flex-wrap align-items-center w-100">
+                                                                <div class="event-img2 overflow-hidden position-relative"><a href="event-detail.html" title=""><img class="img-fluid w-100" src="{% static 'assets/images/resources/event-mini-img1-4.jpg' %}" alt="Event Mini Image 4"></a></div>
+                                                                <div class="event-info2">
+                                                                    <h3 class="mb-0"><a href="event-detail.html" title="">8 Things to Strengthen the Husband-Wife Relationship in Islam</a></h3>
+                                                                    <ul class="event-meta mb-0 list-unstyled d-inline-flex flex-wrap">
+                                                                        <li class="thm-clr"><i class="far fa-calendar"></i>10 June, 2020 @ 20:00:00</li>
+                                                                        <li class="thm-clr"><i class="fas fa-location-arrow"></i>The Grand Mosque</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div> -->
+                                                    </div>
+                                                    <!-- <a href="events.html" title="">See More Events<i class="fas fa-angle-double-right"></i></a> -->
+                                                </div>
+                                                <!-- </div> -->
+
+                                            </div>
+                                        </div><!-- Event & Sermon Wrap 2 -->
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- dasboard -->
+                        </div>
+                        <div class="tab-pane fade" id="profile">
+
+                            <!-- count -->
+
+                            <section>
+                                <div class="w-100   position-relative">
+
+                                    <div class="container">
+                                        <div class="checkout-wrap w-100">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <h2>Profile Information</h2>
+                                                    <div class="row mrg10">Username - &nbsp; <h5> {{
+                                                            UserProfile_user.username }}</h5>
+                                                    </div>
+                                                    <hr><br>
+                                                    <!-- {{ UserProfile_loc.country }} -->
+                                                    <form class="cart-form w-100" action="{% url 'edit_profile' %}"
+                                                        id="form_edit_id" method="post" enctype="multipart/form-data">
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="form_edit_id" value="form_edit">
+
+                                                        <div class="row  ">
+                                                            <div class="col-md-12 col-sm-12 col-lg-6 profile-inner  ">
+                                                                <input type="number" name="phone" minlength="10"
+                                                                    placeholder="{{ UserProfile_loc.phone }}  "
+                                                                    value="{{ UserProfile_loc.phone }} ">
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 col-lg-6 profile-inner">
+                                                                <input type="email" name="email"
+                                                                    placeholder="{{ UserProfile_loc.email }}"
+                                                                    value="{{ UserProfile_loc.email }} ">
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 col-lg-6 pb-20 ">
+                                                                <select id="country" name="country"
+                                                                    class="coupon-inner d-flex flex-wrap">
+
+                                                                    {% if UserProfile_loc.country %}
+                                                                    <option value="{{ UserProfile_loc.country }}">{{
+                                                                        UserProfile_loc.country }}</option>
+                                                                    {% for country in countries %}
+                                                                    <option value="{{ country.id }}">{{ country.name }}
+                                                                    </option>
+                                                                    {% endfor %}
+                                                                    {% else %}
+                                                                    <option value="">Select Country</option>
+                                                                    {% for country in countries %}
+                                                                    <option value="{{ country.id }}">{{ country.name }}
+                                                                    </option>
+                                                                    {% endfor %}
+                                                                    {% endif %}
+                                                                    <div>
+
+                                                                    </div>
+
+
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-md-12 col-sm-12 col-lg-6   pb-20 ">
+                                                                <select id="state" name="state"
+                                                                    class="coupon-inner d-flex flex-wrap ">
+                                                                    {% if UserProfile_loc.state %}
+                                                                    <option value="{{ state.id }}">{{
+                                                                        UserProfile_loc.state }}</option>
+
+                                                                    {% else %}
+                                                                    <option value="{{ state.id }}">Select State</option>
+
+                                                                    {% endif %}
+
+                                                                </select>
+
+                                                            </div>
+
+
+                                                            <div class="col-md-12 col-sm-12 col-lg-6 pb-20 ">
+                                                                <select id="city" name="city"
+                                                                    class="coupon-inner d-flex flex-wrap">
+                                                                    {% if UserProfile_loc.city %}
+                                                                    <option value="{{ city.id }}">{{
+                                                                        UserProfile_loc.city }}</option>
+
+                                                                    {% else %}
+                                                                    <option value="{{ city.id }}">Select City</option>
+
+                                                                    {% endif %}
+
+                                                                </select>
+                                                            </div>
+
+
+
+                                                            <!-- <div class="col-md-12 col-sm-12 col-lg-6">
+                                                                <input type="text" name="country"  placeholder="{{ user_profile.country }}"value="{{ user_profile.country }}">
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                                                <input type="text"   name="state" placeholder=" {{ user_profile.state }}" value="{{ user_profile.state }}">
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                                                <input type="text" name="city" placeholder="{{ user_profile.city }}" value="{{ user_profile.city }}">
+                                                            </div> -->
+
+                                                            <!-- <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                <input type="tel" placeholder="Credit Card Number">
+                                                            </div> -->
+
+                                                            <!-- <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                <a class="d-inline-block thm-clr" href="javascript:void(0);" title="">If you can't Have an Account so Login First</a>
+                                                                <textarea placeholder="Order Note"></textarea>
+                                                            </div> -->
+                                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                <hr>
+                                                                <button type="submit" class="thm-btn thm-bg"
+                                                                    onclick="profileUpdate()">update<span></span><span></span><span></span><span></span>
+                                                                </button>
+
+
+                                                            </div>
+
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                        </div><!-- Checkout Wrap -->
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- count -->
+                        </div>
+                        <div class="tab-pane fade" id="statistics">
+
+                            <!-- count -->
+                            <!-- group stats -->
+
+                            <section>
+                                <div class="w-100  position-relative">
+                                    <!-- <img class="sec-botm-rgt-mckp img-fluid position-absolute" src="assets/images/sec-botm-mckp.png" alt="Sec Bottom Mockup"> -->
+                                    <h1>GROUP STATISTICS</h1>
+                                    <div class="container">
+                                        <!-- <div class="row mrg10">Username - &nbsp; <h5 class="donate-goal d-block thm-clr"> {{ UserProfile_user.username }}</h5>
+                                        
+                                        </div> -->
+
+                                        <hr>
+                                        <!--  -->
+
+                                        <div class="coupon-cart-total-wrap d-flex flex-wrap w-100">
+                                            <div class="coupon-wrap">
+                                                <div class="coupon-title w-100">
+                                                    <h3 class="mb-0"> {{ UserProfile_user.username }}</h3>
+                                                    <p class="mb-0"> your Username</p>
+                                                </div>
+                                                <div class="coupon-inner d-flex flex-wrap">
+                                                    <form class="cont-form w-100">
+                                                        <input type="text" name="search_rec" class="">
+                                                        <button class="thm-btn thm-bg" type="submit"><a class="nav-link"
+                                                                data-toggle="tab" href="#statistics">Search</a>
+                                                            <span></span><span></span><span></span><span></span></button>
+                                                    </form>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div><!-- Coupon & Cart Total Wrap -->
+
+                                        <!--  -->
+
+
+                                        <!-- <form action="" method="">
+                                                <input type="text"  name="search_rec">
+                                                <button type="submit">search</button>
+                                            </form> -->
+                                        <hr><br>
+
+
+                                        <!-- <input type="text" id="search-input" placeholder="Search...">
+                                                <div id="search-results"></div> -->
+
+                                        <div class="donat-wrap w-100">
+                                            <h6>Search Results:</h6>
+                                            <div class="row">
+
+                                                {% if search_results %}
+
+
+                                                {% for category, results in search_results.items %}
+
+
+                                                {% for name, count in results.items %}
+                                                <div class="col-md-12 col-sm-12 col-lg-6">
+                                                    <div class="urgent-donat-box w-100">
+                                                        <!-- <div class="urgent-donat-img overflow-hidden position-relative w-100">
+                                                                                <img class="img-fluid w-100" src="{% static 'assets/images/resources/urgent-donat-img1-1.jpg' %}" alt="Urgent Donation Image 1">
+                                                                                <a class="thm-btn thm-bg position-absolute" href="" title="">Go On <span></span><span></span><span></span><span></span></a>
+                                                                            </div> -->
+                                                        <div class="urgent-donat-info pat-bg gray-layer opc8 position-relative back-blend-multiply gray-bg w-100"
+                                                            style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                            <span class="donate-goal d-block thm-clr">zikr count By {{
+                                                                category }}:</span>
+                                                            <h3 class="mb-0"><a href="" title="">{{name}}</a></h3>
+                                                            <ul
+                                                                class="urgent-donat-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                                <li class="thm-clr"></li>
+                                                                <li><i class="fas fa-heart thm-clr"></i> {{count}}</li>
+                                                            </ul>
+                                                            <div class="urgent-donat-info-raised pat-bg thm-layer opc7 position-absolute back-blend-multiply thm-bg w-100"
+                                                                style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                                <div class="urgent-progress" id="goal-prog1"><span>50
+                                                                        %</span></div>
+                                                                <span class="d-block"> {{count}}</span>
+                                                                <i class="d-block">count</i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+
+                                                {% endfor %}
+                                                {% else %}
+                                                <h6>no results found</h6>
+
+                                                {% endif %}
+
+                                                <hr><br>
+                                                {% for country, total_count in country_total_counts.items %}
+
+
+                                                <div class="col-md-12 col-sm-12 col-lg-6">
+                                                    <div class="urgent-donat-box w-100">
+                                                        <!-- <div class="urgent-donat-img overflow-hidden position-relative w-100">
+                                                            <img class="img-fluid w-100" src="{% static 'assets/images/resources/urgent-donat-img1-1.jpg' %}" alt="Urgent Donation Image 1">
+                                                            <a class="thm-btn thm-bg position-absolute" href="" title="">Go On <span></span><span></span><span></span><span></span></a>
+                                                        </div> -->
+                                                        <div class="urgent-donat-info pat-bg gray-layer opc8 position-relative back-blend-multiply gray-bg w-100"
+                                                            style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                            <span class="donate-goal d-block thm-clr">zikr count By
+                                                                Country</span>
+                                                            <h3 class="mb-0"><a href="" title="">{{country}}</a></h3>
+                                                            <ul
+                                                                class="urgent-donat-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                                <li class="thm-clr"></li>
+                                                                <li><i class="fas fa-heart thm-clr"></i> {{total_count}}
+                                                                </li>
+                                                            </ul>
+                                                            <div class="urgent-donat-info-raised pat-bg thm-layer opc7 position-absolute back-blend-multiply thm-bg w-100"
+                                                                style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                                <div class="urgent-progress" id="goal-prog1"><span>50
+                                                                        %</span></div>
+                                                                <span class="d-block"> {{total_count}}</span>
+                                                                <i class="d-block">count</i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+
+                                                {% for state, total_count in state_total_counts.items %}
+
+
+                                                <div class="col-md-12 col-sm-12 col-lg-6">
+                                                    <div class="urgent-donat-box w-100">
+                                                        <!-- <div class="urgent-donat-img overflow-hidden position-relative w-100">
+                                                            <img class="img-fluid w-100" src="{% static 'assets/images/resources/urgent-donat-img1-1.jpg' %}" alt="Urgent Donation Image 1">
+                                                            <a class="thm-btn thm-bg position-absolute" href="" title=""> Go On  <span></span><span></span><span></span><span></span></a>
+                                                        </div> -->
+                                                        <div class="urgent-donat-info pat-bg gray-layer opc8 position-relative back-blend-multiply gray-bg w-100"
+                                                            style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                            <span class="donate-goal d-block thm-clr">zikr count By
+                                                                State</span>
+                                                            <h3 class="mb-0"><a href="" title="">{{state}}</a></h3>
+                                                            <ul
+                                                                class="urgent-donat-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                                <li class="thm-clr"></li>
+                                                                <li><i class="fas fa-heart thm-clr"></i> {{total_count}}
+                                                                </li>
+                                                            </ul>
+                                                            <div class="urgent-donat-info-raised pat-bg thm-layer opc7 position-absolute back-blend-multiply thm-bg w-100"
+                                                                style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                                <div class="urgent-progress" id="goal-prog1"><span>50
+                                                                        %</span></div>
+                                                                <span class="d-block"> {{total_count}}</span>
+                                                                <i class="d-block">count</i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+
+                                                {% for city, total_count in city_total_counts.items %}
+
+
+                                                <div class="col-md-12 col-sm-12 col-lg-6">
+                                                    <div class="urgent-donat-box w-100">
+                                                        <!-- <div class="urgent-donat-img overflow-hidden position-relative w-100">
+                                                            <img class="img-fluid w-100" src="{% static 'assets/images/resources/urgent-donat-img1-1.jpg' %}" alt="Urgent Donation Image 1">
+                                                            <a class="thm-btn thm-bg position-absolute" href="" title="">  Go On <span></span><span></span><span></span><span></span></a>
+                                                        </div> -->
+                                                        <div class="urgent-donat-info pat-bg gray-layer opc8 position-relative back-blend-multiply gray-bg w-100"
+                                                            style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                            <span class="donate-goal d-block thm-clr">zikr count By
+                                                                City</span>
+                                                            <h3 class="mb-0"><a href="" title="">{{city}}</a></h3>
+                                                            <ul
+                                                                class="urgent-donat-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                                <li class="thm-clr"></li>
+                                                                <li><i class="fas fa-heart thm-clr"></i> {{total_count}}
+                                                                </li>
+                                                            </ul>
+                                                            <div class="urgent-donat-info-raised pat-bg thm-layer opc7 position-absolute back-blend-multiply thm-bg w-100"
+                                                                style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                                <div class="urgent-progress" id="goal-prog1"><span>50
+                                                                        %</span></div>
+                                                                <span class="d-block"> {{total_count}}</span>
+                                                                <i class="d-block">count</i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+
+                                            </div>
+                                        </div><!-- Urgent Donation Wrap -->
+                                        <div
+                                            class="pagination-wrap mt-40 d-flex flex-wrap justify-content-center text-center w-100">
+                                            <ul class="pagination mb-0">
+                                                <li class="page-item prev"><a class="page-link"
+                                                        href="javascript:void(0);" title=""><i
+                                                            class="fas fa-long-arrow-alt-left"></i></a></li>
+                                                <li class="page-item"><a class="page-link" href="javascript:void(0);"
+                                                        title="">1</a></li>
+                                                <li class="page-item active"><a class="page-link"
+                                                        href="javascript:void(0);" title="">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="javascript:void(0);"
+                                                        title="">3</a></li>
+                                                <li class="page-item"><a class="page-link" href="javascript:void(0);"
+                                                        title="">4</a></li>
+                                                <li class="page-item pg-rang">...........</li>
+                                                <li class="page-item"><a class="page-link" href="javascript:void(0);"
+                                                        title="">24</a></li>
+                                                <li class="page-item next"><a class="page-link"
+                                                        href="javascript:void(0);" title=""><i
+                                                            class="fas fa-long-arrow-alt-right"></i></a></li>
+                                            </ul>
+                                        </div><!-- Pagination Wrap -->
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- count -->
+                        </div>
+
+                        <div class="tab-pane fade" id="comments">
+
+                            <!-- count -->
+
+                            <section>
+                                <div class="w-100   position-relative">
+                                    <div class="container">
+                                        <div class="cart-wrap w-100">
+
+                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                <div class="cart-total position-relative pat-bg thm-layer opc6 back-blend-multiply thm-bg"
+                                                    style="background-image: url(assets/images/pattern-bg.jpg);">
+                                                    <ul class="cart-total-list mb-0 list-unstyled w-100">
+                                                        <li>Today's Count : <span id="zikr_count">{{ current_day_zikr
+                                                                }}</span></li>
+                                                        <li>Percent Count : <span
+                                                                id=" zikr_count">{{rounded_total_percentage_completed}}
+                                                                %</span></li>
+
+                                                        <li>Total : <span id=" zikr_count">{{total_zikr_count }}</span>
+                                                        </li>
+                                                        <li class="cart-total-bottm">All Users Total : <span
+                                                                id=" zikr_count">{{all_users_total_zikr }}</span></li>
+                                                        <!-- {%for zikr_count_get in zikr_count_get%}
+                                                            
+                                                            <li class="cart-total-bottm">Total:<span>{{zikr_count_get.zikr_date}}</span><span>{{zikr_count_get.zikr_count}}</span></li> 
+                                                       
+                                                        {%endfor%} -->
+                                                    </ul>
+                                                    <!-- <button class="thm-btn bg-color1" type="submit">PROCEED TO CHECKOUT<span></span><span></span><span></span><span></span></button> -->
+                                                </div>
+
+                                            </div>
+                                            <form class="cart-form w-100" action="{% url 'm-dashboard' %}"
+                                                id="form_Zikr_count_id" method="post" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="form_Zikr_count_id" value="form_Zikr_count">
+                                                <div class="coupon-cart-total-wrap d-flex flex-wrap w-100">
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <div class="coupon-wrap">
+                                                            <div class="coupon-title w-100">
+                                                                <h3 class="mb-0">Zikr count</h3>
+
+                                                            </div>
+                                                            <div class="coupon-inner d-flex flex-wrap w-100">
+                                                                <input type="number" name="zikr_count" min="1">
+
+                                                            </div><br>
+                                                            <div class="row w-100">
+                                                                &nbsp;&nbsp;&nbsp;<button class="thm-btn thm-bg"
+                                                                    onclick="zkirclickd()" type="submit">ADD
+                                                                    <span></span><span></span><span></span><span></span></button>
+                                                                <span></span>&nbsp;
+                                                                <!-- <button class="thm-btn bg-color1" type="submit" href=" ">UPDATE  <span></span><span></span><span></span><span></span></button> -->
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div><!-- Coupon & Cart Total Wrap -->
+                                            </form>
+                                            <script>
+                                                function zkirclickd() {
+                                                    alert("congrats zikr count added successfully")
+                                                    return true
+                                                }
+                                            </script>
+
+                                        </div><!-- Cart Wrap -->
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- count -->
+                        </div>
+                        <div class="tab-pane fade" id="status">
+                            <section>
+                                <div class="coupon-cart-total-wrap d-flex flex-wrap w-100">
+                                    <div class="coupon-wrap">
+                                        <div class="coupon-title w-100">
+                                            <h3 class="mb-0"> {{ UserProfile_user.username }}</h3>
+                                            <p class="mb-0"> your Username</p>
+                                        </div>
+                                        <div class="coupon-inner d-flex flex-wrap">
+                                            <form class="cont-form w-100">
+                                                <input type="text" name="search_rec" class="">
+                                                <button class="thm-btn thm-bg" type="submit"><a class="nav-link"
+                                                        data-toggle="tab" href="#statistics">Search</a>
+                                                    <span></span><span></span><span></span><span></span></button>
+                                            </form>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="w-100 position-relative">
+                                    <h1>WORLD STATISTICS</h1>
+                                    <div class="container">
+                                        <!-- Add code to calculate and display the count of users (persons) here -->
+                                        <div class="coupon-wrap">
+                                            <div class="coupon-title w-100">
+                                                <h3 class="mb-0">Total Users</h3>
+                                                <p>number of users:</p>
+                                                <!-- Add code to display the count of users here -->
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <!-- Add code to calculate and display the count of countries here -->
+                                        <div class="coupon-wrap">
+                                            <div class="coupon-title w-100">
+                                                <h3 class="mb-0">Total Countries</h3>
+                                                <p>number of countries:</p>
+                                                <!-- Add code to display the count of countries here -->
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <!-- Add code to calculate and display the count of states here -->
+                                        <div class="coupon-wrap">
+                                            <div class="coupon-title w-100">
+                                                <h3 class="mb-0">Total States</h3>
+                                                <p>number of states:</p>
+                                                <!-- Add code to display the count of states here -->
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <!-- Add code to calculate and display the count of cities here -->
+                                        <div class="coupon-wrap">
+                                            <div class="coupon-title w-100">
+                                                <h3 class="mb-0">Total Cities</h3>
+                                                <p>number of cities:</p>
+                                                <!-- Add code to display the count of cities here -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="tab-pane fade" id="reviews">
+
+
+                            <section>
+                                <div class="w-100   position-relative">
+                                    <div class="container">
+                                        <div class="cart-wrap w-100">
+                                            <form class="cart-form w-100">
+
+                                            </form>
+                                            <div class="coupon-cart-total-wrap d-flex flex-wrap w-100">
+                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <div class="coupon-wrap">
+                                                        <div class="coupon-title w-100">
+                                                            <h3 class="mb-0">Logout</h3>
+                                                            <p class="mb-0">Have a good time zikr daily</p>
+                                                        </div>
+                                                        <div class="coupon-inner d-flex flex-wrap w-100">
+
+                                                            <a class="thm-btn thm-bg" href="{% url 'signout' %}"
+                                                                type="submit">Logout
+                                                                <span></span><span></span><span></span><span></span></a>
+
+                                                        </div><br>
+
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div><!-- Coupon & Cart Total Wrap -->
+
+                                        </div><!-- Cart Wrap -->
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Product Detail Wrap -->
+        </div>
+    </div>
+</section>
+<script>
+    function profileUpdate() {
+        alert("profile update successfully")
+    }
+</script>
+
+
+
+
+{% endblock content %}
